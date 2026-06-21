@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐竞体育 · 专注于赛事竞技的平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+            background-color: #f7f8fa;
+            color: #1e293b;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        /* 深色头图 — 叙事开场 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2e45 80%);
+            color: #eef2f5;
+            padding: 6rem 1.5rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #d19a5e;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.06em;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            color: #d6ad7a;
+        }
+
+        .hero .opening {
+            max-width: 660px;
+            margin: 1.2rem auto 0;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* 正文浅色区 */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.8rem 4.5rem;
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .intro-text strong {
+            font-weight: 600;
+            color: #1a3a4a;
+        }
+
+        /* 特点卡片——温和平铺 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            min-width: 160px;
+            border-left: 3px solid #d19a5e;
+            padding: 0.2rem 0 0.2rem 1.2rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1e2f3f;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #415a6b;
+        }
+
+        /* 温和接续段落 */
+        .story-segment {
+            margin: 2rem 0 2.5rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #e7eef3;
+            border-bottom: 1px solid #e7eef3;
+        }
+
+        .story-segment p {
+            margin-bottom: 0.9rem;
+        }
+
+        .story-segment p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #be7c4a;
+            text-decoration: none;
+            border-bottom: 1px dotted #dbb58b;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        a:hover {
+            color: #8e5d35;
+            border-bottom: 1px solid #8e5d35;
+        }
+
+        /* 温和结尾 */
+        .closing-note {
+            margin-top: 3.2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #edf2f6;
+            font-size: 0.98rem;
+            color: #3f5566;
+        }
+
+        .closing-note p:first-child {
+            margin-bottom: 0.6rem;
+        }
+
+        /* FAQ 摘要 — 克制简洁 */
+        .faq-mini {
+            background: #f4f7fb;
+            padding: 1.6rem 1.6rem 1rem;
+            border-radius: 12px;
+            margin: 2.4rem 0 1rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #1a2d3d;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 0 0.8rem;
+            font-size: 0.92rem;
+            color: #3d5567;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 4rem 1.2rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 2.2rem 1.2rem 3rem;
+            }
+
+            .feature-grid {
+                gap: 1.5rem;
+            }
+
+            .feature-item {
+                padding-left: 0.9rem;
+                min-width: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>一处<span>乐竞体育</span>的起点</h1>
+    <div class="opening">
+        人们总在寻找一个地方，不必绕路就能看清竞技的脉络。<br>
+        安静、直接、无干扰。
+    </div>
+</section>
+
+<main class="content">
+    <div class="intro-text">
+        <p><strong>乐竞体育</strong> 并非一个需要反复解释的名字。它指向赛事、竞技、以及那些真实发生的瞬间。如果你曾因为信息混乱而错过关键动态，或因为入口太深而放弃跟进，那么这里或许就是你想要的那个起点——没有浮夸的许诺，只有对赛事信息清晰、克制的呈现。</p>
+    </div>
+
+    <!-- 承接段落：自然过渡 -->
+    <div class="story-segment">
+        <p>这个平台所关注的核心始终是同一件事：如何让一个对竞技感兴趣的人，更快地识别出自己需要的部分。从热门联赛到相对小众的对抗项目，信息按逻辑排列，没有多余的干扰。你不需要猜测某个按钮的用途，也不必在多层菜单里迷失方向。</p>
+        <p>很多时候，一个好的赛事页面就像是场边的一把长椅——你坐下，看比赛，仅此而已。<a href="https://officials-lejingsports.com">乐竞体育</a> 试图成为这样的存在：当你想要了解一项赛事、一支队伍或一场对决时，它就在那里，结构简单，内容直接。</p>
+    </div>
+
+    <!-- 特点列表：四个维度 -->
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>清晰的分类</h3>
+            <p>赛事按类型、时间、级别分组，降低认知负担，快速定位。</p>
+        </div>
+        <div class="feature-item">
+            <h3>克制的界面</h3>
+            <p>去除非必要的装饰和弹窗，让内容成为视觉的中心。</p>
+        </div>
+        <div class="feature-item">
+            <h3>信息优先级</h3>
+            <p>比分、时间、赛程状态置于醒目位置，次要细节折叠隐藏。</p>
+        </div>
+        <div class="feature-item">
+            <h3>一致性</h3>
+            <p>页面结构在不同项目间保持一致，减少适应成本。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要：轻量答疑 -->
+    <div class="faq-mini">
+        <details>
+            <summary>乐竞体育主要提供哪些内容？</summary>
+            <p>围绕各类竞技赛事的信息聚合，包括赛程、实时数据、战队/选手概况等。不涉及博彩或诱导交易。</p>
+        </details>
+        <details>
+            <summary>使用前需要注册吗？</summary>
+            <p>浏览大部分公开信息无需注册。部分个性化功能（如关注特定赛事）可能需要简单账户。</p>
+        </details>
+        <details>
+            <summary>信息更新频率如何？</summary>
+            <p>核心赛事数据为实时或准实时更新，其他内容按赛程周期维护。具体时效可参考页面标注。</p>
+        </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing-note">
+        <p>如果你恰好需要这样一个入口——安静、聚焦、没有多余的装饰——不妨把 <a href="https://officials-lejingsports.com">乐竞体育</a> 记在某个角落。</p>
+        <p>它不承诺改变你看比赛的方式，只希望能让那些原本就重要的信息，更容易被找到。竞技本身已经足够精彩，剩下的，只是一个合适的观看位置。</p>
+    </div>
+</main>
+
+</body>
+</html>
