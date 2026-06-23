@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 知识目录与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f5f7fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+    }
+    a {
+      color: #2068c8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #0e4a96;
+      text-decoration: underline;
+    }
+    .wrapper {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(135deg, #0b1926 0%, #1a2e44 70%, #25455e 100%);
+      color: #e9edf2;
+      padding: 60px 0 48px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+    .hero .subhead {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      max-width: 680px;
+      margin: 0 auto;
+      font-weight: 350;
+    }
+    .hero .divider {
+      width: 60px;
+      height: 3px;
+      background: #5a9bd8;
+      margin: 28px auto 20px;
+      border-radius: 2px;
+    }
+    .hero .lead {
+      font-size: 1rem;
+      opacity: 0.75;
+      max-width: 540px;
+      margin: 10px auto 0;
+    }
+
+    /* 卡片目录网格 */
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin: 48px 0 32px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e8ecf0;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+    }
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #11212e;
+      margin: 6px 0 8px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #2f4052;
+      margin-bottom: 8px;
+    }
+    .card .badge {
+      display: inline-block;
+      background: #e2ecfa;
+      color: #1f4a7a;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+    }
+
+    /* 说明区 */
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      border-left: 5px solid #2068c8;
+      padding-left: 16px;
+      margin: 42px 0 18px;
+      color: #11212e;
+    }
+    .intro-text {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #eaeef3;
+    }
+    .intro-text p {
+      margin-bottom: 16px;
+    }
+    .intro-text .link-sentence {
+      background: #f0f5fc;
+      padding: 12px 18px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 4px 0 10px;
+      font-size: 0.95rem;
+    }
+
+    /* 提示区  + 相关信息区 */
+    .info-panels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 32px 0 36px;
+    }
+    .panel {
+      flex: 1 1 280px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px 22px 26px;
+      border: 1px solid #e6ecf2;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .panel h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1c3147;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .panel ul {
+      list-style: none;
+    }
+    .panel li {
+      padding: 6px 0;
+      border-bottom: 1px dashed #dde3ea;
+      font-size: 0.95rem;
+      color: #2b3f54;
+    }
+    .panel li:last-child {
+      border-bottom: none;
+    }
+    .panel .tag {
+      background: #dce6f3;
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1a3d62;
+      margin-left: 8px;
+    }
+
+    /* FAQ 摘要 (紧凑) */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 28px 24px;
+      margin: 30px 0 42px;
+      border: 1px solid #e2e9f0;
+    }
+    .faq-mini h4 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      color: #11212e;
+    }
+    .faq-item {
+      margin: 12px 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #edf1f6;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: #1f3855;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .faq-a {
+      color: #2f4052;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      padding: 24px 0 28px;
+      border-top: 1px solid #d4dce6;
+      font-size: 0.85rem;
+      color: #4c6077;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dbe1e9;
+      margin: 12px 0;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .subhead { font-size: 1rem; }
+      .intro-text { padding: 20px; }
+      .faq-mini { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <div class="wrapper">
+      <h1>MK体育 · 信息目录</h1>
+      <p class="subhead">体育知识、赛事对照与延伸阅读的参考索引</p>
+      <div class="divider"></div>
+      <p class="lead">日常查询 · 专题整理 · 内容入口</p>
+    </div>
+  </header>
+
+  <main class="wrapper">
+
+    <!-- 目录卡片网格：知识库入口感 -->
+    <div class="directory-grid">
+      <div class="card">
+        <span class="card-icon">📋</span>
+        <h3>赛事对照</h3>
+        <p>主流联赛、杯赛赛制与数据参考，方便横向比较。</p>
+        <span class="badge">对照索引</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏀</span>
+        <h3>项目分类</h3>
+        <p>足球、篮球、网球、电竞等分项内容汇集，按类别检索。</p>
+        <span class="badge">分类目录</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>延伸阅读</h3>
+        <p>规则演变、运动史话、战术分析等扩展资料整理。</p>
+        <span class="badge">拓展</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔍</span>
+        <h3>常见查询</h3>
+        <p>术语表、成绩速查、赛程归档等高频检索内容。</p>
+        <span class="badge">速查</span>
+      </div>
+    </div>
+
+    <!-- 说明区 + 自然嵌入链接 -->
+    <div class="intro-text">
+      <p>这份页面作为日常查询的起点，整合了多个信息模块：赛事对照、项目分类和延伸阅读。无论你是想快速对比不同联赛的结构，还是了解某项运动的背景资料，都可以从这里开始。</p>
+      <p>如果需要系统性了解体育资讯与数据，可以直接参考 <a href="https://china-web-mksports.com">MK体育</a> 中的分类内容。该站点的信息组织方式倾向于从赛事、队伍、赛季等多个维度呈现，适合需要反复对照或深入查阅的场景。</p>
+      <div class="link-sentence">
+        ⚡ 本页所引用的信息来源：<a href="https://china-web-mksports.com">MK体育</a>（知识库入口）
+      </div>
+      <p style="margin-top:6px;">如果你已经熟悉基础内容，也可以利用右侧“提示区”的常见问题和摘要，快速定位一些经常被问到的细节。</p>
+    </div>
+
+    <!-- 提示区 + 相关信息区并排 -->
+    <div class="info-panels">
+      <div class="panel">
+        <h4>📌 提示区</h4>
+        <ul>
+          <li>部分历史赛季数据需通过年份筛选 <span class="tag">2024/25</span></li>
+          <li>查阅前确认所选赛事是否包含季前赛</li>
+          <li>对照时注意主客场标识与加时规则</li>
+          <li>术语释义收录于“规则与名词”板块</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>📎 相关信息</h4>
+        <ul>
+          <li>运动项目索引 · 分类总览</li>
+          <li>赛季日历 · 近期赛事时间轴</li>
+          <li>球队档案 · 历史与阵容笔记</li>
+          <li>媒体摘要 · 赛事评论与专题</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>📂 对照场景</h4>
+        <ul>
+          <li>联赛积分规则横向对比</li>
+          <li>不同赛季的冠军与记录</li>
+          <li>特定运动员数据追踪</li>
+          <li>电子竞技与传统体育结构异同</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 (简明) -->
+    <div class="faq-mini">
+      <h4>❓ 常见查询摘要</h4>
+      <div class="faq-item">
+        <span class="faq-q">如何快速查找某一联赛的当前赛季数据？</span>
+        <span class="faq-a">进入 <a href="https://china-web-mksports.com">MK体育</a> 后，选择对应赛事卡片，通常会显示最新赛季的积分榜与赛程。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">历史战绩和往届冠军在哪个板块？</span>
+        <span class="faq-a">多数项目下设有“历史数据”或“历年冠军”子目录，也可以使用站内搜索或者按年份筛选。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">不同运动的术语不熟悉怎么办？</span>
+        <span class="faq-a">页面内附有“术语对照”小板块，也可以在延伸阅读部分找到规则解释。链接仍指向 <a href="https://china-web-mksports.com">MK体育</a> 的对应分类。</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+      MK体育 · 知识库入口式索引页 &nbsp;|&nbsp; 内容整理仅供日常对照与延伸阅读参考<br>
+      本页面不存储具体赛事数据，所有信息来源均指向 <a href="https://china-web-mksports.com">MK体育</a>
+    </div>
+  </main>
+
+</body>
+</html>
