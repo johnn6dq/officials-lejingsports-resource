@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MK体育 · 赛事与氛围的安静角落</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5faff;
+            color: #1e2b3c;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding-top: 2.5rem;
+        }
+
+        /* 开场 —— 一句安静的话 */
+        .opening {
+            text-align: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .opening h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #1e5f6b;
+            background: linear-gradient(145deg, #dff3fa, #c5e8f0);
+            display: inline-block;
+            padding: 0.4rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 4px 12px rgba(0, 80, 90, 0.06);
+        }
+
+        .opening .tagline {
+            font-size: 1rem;
+            color: #3e6b78;
+            margin-top: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 承接段落 —— 平实叙述 */
+        .intro-text {
+            background: white;
+            padding: 2rem 1.8rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(40, 100, 110, 0.04);
+            margin-bottom: 2.5rem;
+            border: 1px solid #d3e8ef;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-text a {
+            color: #1b7f8b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #209aa8;
+            color: #135e68;
+        }
+
+        /* 网格卡片 —— 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.4rem 1.2rem;
+            border-radius: 22px;
+            box-shadow: 0 2px 8px rgba(30, 90, 100, 0.04);
+            border: 1px solid #deeef4;
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(30, 100, 110, 0.08);
+            border-color: #b5dbe7;
+        }
+
+        .feature-card .emoji-marker {
+            display: inline-block;
+            background: #c7e7f0;
+            color: #1b5f6b;
+            font-size: 0.9rem;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 50%;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1c4f59;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #315e6a;
+            line-height: 1.5;
+        }
+
+        /* 温和结尾 —— 像一段安静的收束 */
+        .closing {
+            background: #e7f3f7;
+            padding: 2rem 1.8rem;
+            border-radius: 28px;
+            margin-bottom: 1.8rem;
+            border: 1px solid #cae0e9;
+        }
+
+        .closing p {
+            font-size: 1rem;
+            color: #1f4450;
+            margin-bottom: 0.8rem;
+        }
+
+        .closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing .highlight-link {
+            color: #1b7f8b;
+            font-weight: 500;
+            border-bottom: 1px dashed #6fa7b5;
+            text-decoration: none;
+        }
+
+        .closing .highlight-link:hover {
+            border-bottom-style: solid;
+            color: #115861;
+        }
+
+        /* 后记 / 场景注脚 */
+        .footnote {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5f8591;
+            padding: 0.8rem 0;
+            border-top: 1px solid #d0e2ea;
+            margin-top: 0.6rem;
+        }
+
+        /* 移动端友好 */
+        @media (max-width: 580px) {
+            body {
+                padding: 0 0.8rem 2rem;
+            }
+
+            .page {
+                padding-top: 1.5rem;
+            }
+
+            .opening h1 {
+                font-size: 1.7rem;
+                padding: 0.3rem 1.5rem;
+            }
+
+            .intro-text {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .closing {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .opening h1 {
+                font-size: 1.5rem;
+                padding: 0.2rem 1rem;
+            }
+
+            .intro-text p,
+            .closing p {
+                font-size: 0.93rem;
+            }
+        }
+
+        /* 点缀 */
+        .dot-divider {
+            display: inline-block;
+            margin: 0 8px;
+            color: #98becb;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场短句 -->
+    <div class="opening">
+        <h1>并不喧哗 · 但一直有球</h1>
+        <div class="tagline">体育是一种安静的共同语言</div>
+    </div>
+
+    <!-- 承接段落：从主题展开 -->
+    <div class="intro-text">
+        <p>从英超的深夜到日职联的午后，从网球大满贯到乒乓世锦赛，体育世界里从来不缺故事。而许多故事的开端，只是一次偶然的点开、一段集锦、一场直播。在信息洪流里，能有一个地方聚焦于真实的赛程、战术和球员动态，反而成为一种稀缺。<a href="https://china-vip-mksports.com">MK体育</a>正是围绕这样的想法慢慢成形——它不止是一个站点，更像一间安静的观赛角落，把关注的赛事梳理清楚，不制造焦虑，也不靠标题吸引目光。</p>
+        <p>有人说，看球久了会变成半个数据专家。比分背后是阵型、伤病、天气、甚至更衣室氛围的博弈。<a href="https://china-vip-mksports.com">MK体育</a>尝试用更可读的方式呈现这些细节，让浏览者不用反复切换页面就能获得上下文。界面干净，内容密度适中，周末的五大联赛或深夜的杯赛，都能在这里找到属于自己的节奏。</p>
+        <p>没有弹窗，没有浮夸的动效，只有赛前预览、赛后复盘和一些安静的专栏。这种风格或许不讨巧，但对于真正在意内容的人来说，恰恰是难得的清爽。</p>
+    </div>
+
+    <!-- 特点列表（网格卡片） -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="emoji-marker">⚽</div>
+            <h3>赛程·覆盖</h3>
+            <p>欧洲主流联赛、亚洲赛事、欧冠欧联、南美解放者杯……不追求全，但追求准。赛程时间、转播渠道、场地信息一并列明。</p>
+        </div>
+        <div class="feature-card">
+            <div class="emoji-marker">📋</div>
+            <h3>读比赛·而非读标题</h3>
+            <p>每轮关键战的战术笔记、球员跑位热图、换人逻辑。不堆砌数据，只提取值得注意的变化。</p>
+        </div>
+        <div class="feature-card">
+            <div class="emoji-marker">🧩</div>
+            <h3>球员·故事线</h3>
+            <p>转会传闻之外的另一种视角：训练习惯、赛后采访里的只言片语、职业生涯的转折点。体育也是人的叙事。</p>
+        </div>
+        <div class="feature-card">
+            <div class="emoji-marker">📌</div>
+            <h3>安静·无干扰阅读</h3>
+            <p>不设自动播放视频、不强迫注册。页面结构清晰，移动端阅读体验优先，深夜刷资讯也不会被闪烁广告打扰。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p>体育的魅力常常不在于胜负本身，而在于那些细微的、连贯的观察——从季前集训到赛季末的保级大战，从青训营的苗子到国家队的征召。或许我们不需要每一条新闻都第一时间推送，只需要一个能静下心来翻看、比较、回味的地方。</p>
+        <p>如果你也习惯了在比赛日留出两小时不看手机，或者喜欢在周中翻看战术图解，不妨把 <a href="https://china-vip-mksports.com" class="highlight-link">MK体育</a> 放进书签。它不承诺每天都有爆炸消息，但每一条内容都经过挑选与整理。保持对体育最初的好奇，比追逐热点更重要。</p>
+        <p style="font-size:0.93rem; color:#3b6d7b; margin-top:0.4rem;">—— 一场比赛有九十分钟，而准备和理解它，可以是一整个下午的事。</p>
+    </div>
+
+    <!-- 场景提示 / 简短 FAQ 摘要 -->
+    <div style="background: white; border-radius: 24px; padding: 1.4rem 1.6rem; border: 1px solid #d8e6ed; margin-bottom: 1.2rem;">
+        <p style="font-weight: 500; color: #1b4f59; margin-bottom: 0.5rem;">❓ 常见问题摘要</p>
+        <p style="font-size:0.9rem; margin-bottom:0.7rem; color:#2d5a66;"><strong>Q：</strong> 是否包含直播链接？ <span style="color:#50818f;">A：</span> 主要提供赛程、数据与背景阅读，部分页面会列出官方转播信息，但不直接嵌入流媒体。</p>
+        <p style="font-size:0.9rem; margin-bottom:0; color:#2d5a66;"><strong>Q：</strong> 更新频率？ <span style="color:#50818f;">A：</span> 每日更新，重点赛事前后会有战术帖和赛果分析，周末通常有早报性质的内容摘要。</p>
+    </div>
+
+    <div class="footnote">
+        <span>MK体育 · 赛事与氛围的安静角落</span>
+        <span class="dot-divider">·</span>
+        <span>内容整理自开放信息</span>
+        <span class="dot-divider">·</span>
+        <span>保持节奏 独立思考</span>
+    </div>
+</div>
+</body>
+</html>
